@@ -109,4 +109,23 @@ To simplify the code, some terms may differ from that in the paper or commonly u
 
 ---
 
-> Since the relevant paper has not yet been published, some content is not convenient to be made public, including the pre-trained models, open source license, results of the additional experiments, etc. We will promptly supplement the relevant information after the paper is accepted.
+Since the relevant paper has not yet been published, some content is not convenient to be made public, including the pre-trained models, open source license, results of the additional experiments, etc. We will promptly supplement the relevant information after the paper is accepted.
+
+To reference the work for now you could cite it as:
+
+```
+@misc{DeReverbIC,
+  author       = {Lu, Jiaqi and
+                  Li, Yusen and
+                  Shen, Ying and
+                  Zhang, Lin},
+  title        = {DeReverbIC: A TDUNET-Based Two-Stage Framework for
+                   RIR Blind Estimation
+                  },
+  month        = oct,
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.15679579},
+  url          = {https://doi.org/10.5281/zenodo.15679579},
+}
+```
