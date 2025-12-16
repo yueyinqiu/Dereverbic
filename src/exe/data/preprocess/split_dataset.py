@@ -60,7 +60,6 @@ def main():
     random: Random = Random(config.random_seed)
 
     print("Shuffling...")
-    # 文件名为随机值，排序就是打乱
     rirs: list[str] = load_and_sort(config.rir_contents)
     speeches: list[str] = load_and_sort(config.speech_contents)
 
