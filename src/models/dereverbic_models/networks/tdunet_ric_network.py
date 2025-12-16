@@ -12,7 +12,7 @@ class TdunetRicNetwork(torch.nn.Module):
 
         channels: int = 48
         self.preprocess_for_rir = DereverbicPreprocess(2, channels)
-        self.pair_for_rir = DereverbicTdunet(channels, replace_lstm_with_encoder_decoder, simple_decoder)
+        self.pair_for_rir = DereverbicTdunet(channels, replace_lstm_with_encoder_decoder, simple_decoder, False)
         self.postprocess_for_rir = DereverbicPostprocess(channels * 2, 1, 1, 1, 5)
 
     def forward(self, reverb: Tensor3d, speech: Tensor3d):

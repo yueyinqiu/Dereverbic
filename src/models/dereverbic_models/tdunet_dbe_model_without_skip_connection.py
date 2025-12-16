@@ -9,12 +9,12 @@ from models.dereverbic_models.networks.tdunet_dbe_network import TdunetDbeNetwor
 from trainers.trainable import Trainable
 
 
-class TdunetDbeModel(Trainable):
+class TdunetDbeModelWithoutSkipConnection(Trainable):
     def __init__(self, device: torch.device) -> None:
         super().__init__()
         self.device = device
 
-        self.module = TdunetDbeNetwork(False).to(device)
+        self.module = TdunetDbeNetwork(True).to(device)
         self.optimizer = AdamW(self.module.parameters(), 0.0001)
 
         self.mrstft = MrstftLoss.for_rir(device)

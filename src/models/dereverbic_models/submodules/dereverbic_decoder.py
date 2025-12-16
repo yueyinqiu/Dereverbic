@@ -24,9 +24,9 @@ class DereverbicDecoder(torch.nn.Module):
         for _ in range(block_count):
             channels_next: int = channels_input - channels_decrease_per_layer
             block_list.append(DereverbicDecoderBlock(channels_input * 2, 
-                                                channels_next, 
-                                                dilation, 
-                                                simple_decoder))
+                                                     channels_next, 
+                                                     dilation, 
+                                                     simple_decoder))
             channels_input = channels_next
         self.blocks: DereverbicDecoder.DecoderBlockList = anify(torch.nn.ModuleList(block_list))
 

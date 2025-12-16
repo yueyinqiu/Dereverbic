@@ -17,7 +17,7 @@ class TdunetDereverbNetwork(torch.nn.Module):
 
         channels: int = 48
         self.preprocess_for_speech = DereverbicPreprocess(1, channels)
-        self.pair_for_speech = DereverbicTdunet(channels, False, False)
+        self.pair_for_speech = DereverbicTdunet(channels, False, False, False)
         self.postprocess_for_speech = DereverbicPostprocess(channels * 2, 1, 1, 1, 1)
 
     def forward(self, reverb: Tensor3d):

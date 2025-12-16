@@ -6,13 +6,13 @@ from models.dereverbic_models.submodules.dereverbic_postprocess import Dereverbi
 from models.dereverbic_models.submodules.dereverbic_preprocess import DereverbicPreprocess
 
 class TdunetDbeNetwork(torch.nn.Module):
-    def __init__(self):
+    def __init__(self, disable_skip_connection: bool):
         super().__init__()
 
         channels: int = 48
 
         self.preprocess = DereverbicPreprocess(1, channels)
-        self.pair = DereverbicTdunet(channels, False, False)
+        self.pair = DereverbicTdunet(channels, False, False, disable_skip_connection)
         self.postprocess = DereverbicPostprocess(channels * 2, 1, 1, 1, 5)
 
     def forward(self, reverb: Tensor3d):
