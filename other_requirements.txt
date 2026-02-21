@@ -6,6 +6,7 @@ matplotlib==3.10.0
 nnAudio==0.3.3
 pesq==0.0.4
 statictorch==0.0.4
+h5py==3.15.1
 
 # PyLint
-variable-declaration-checker
+variable-declaration-checker==0.0.7
