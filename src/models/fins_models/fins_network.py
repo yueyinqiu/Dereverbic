@@ -29,17 +29,18 @@ class FinsNetwork(torch.nn.Module):
         f_bounds.append((5656.8, 11313.6))
         f_bounds.append((11313.6, 22627.2))
 
-        firs: list = []
+        firs: list[numpy.ndarray] = []
         low: float
         high: float
         for low, high in f_bounds:
-            fir: numpy.ndarray = scipy.signal.firwin(
+            fir: object = scipy.signal.firwin(
                 1023,
                 numpy.array([low, high]),
-                pass_zero="bandpass",  # pyright: ignore [reportArgumentType]
+                pass_zero=False,
                 window="hamming",
                 fs=48000,
             )
+            assert isinstance(fir, numpy.ndarray)
             firs.append(fir)
 
         firs_np: numpy.ndarray = numpy.array(firs)
